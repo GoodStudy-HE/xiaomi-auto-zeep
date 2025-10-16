@@ -37,7 +37,7 @@ def get_accounts_from_env():
         if username and password:
             accounts.append({"username": username, "password": password})
             logger.info(f"✅ 成功加载账号 {i}: {username}")
-    
+           
     # 如果没有找到任何账号配置，给出提示
     if not accounts:
         logger.warning("⚠️  未找到任何账号配置，请检查GitHub Secrets设置")
@@ -241,8 +241,8 @@ class StepSubmitter:
              
             # 账号间间隔（避免请求过于频繁）
             if i < len(ACCOUNTS):
-                logger.info("⏳ 等待5秒后处理下一个账号...")
-                time.sleep(5)
+                logger.info("⏳ 等待200秒后处理下一个账号...")
+                time.sleep(200)
          
         # 输出最终结果
         logger.info(f"🏁 任务完成! 成功: {success_count}, 失败: {fail_count}")
